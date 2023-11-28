@@ -16,14 +16,8 @@ class NhaCungCapController extends Controller
     }
     function Them(Request $request)
     {
-        if ($request->session()->has('logged_in'))
-        {
+       
             return view('San-Pham/nha-cung-cap/them');
-    }
-        else
-        {
-            return redirect()->route('DangNhap')->with('thong_bao', 'thành công');
-        }
         
     }
 

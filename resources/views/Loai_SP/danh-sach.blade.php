@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{ asset('bootstrap-5.2.3-dist/sweetalert2/sweetalert2.min.css') }}">
     <script src="{{ asset('bootstrap-5.2.3-dist/sweetalert2/sweetalert2.all.min.js') }}"></script>
+
 </head>
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">LOẠI SẢN PHẨM</h1>
@@ -48,5 +49,9 @@
 
 
 
-   
+@section('page')
+    @if(session('thong_bao'))
+        <script>Swal.fire("{{ session('thong_bao') }}")</script>
+        @endif
+@endsection
 

@@ -35,37 +35,8 @@ class AccountController extends Controller
         return redirect()->route('Dangky')->with('thong_bao', 'TẠO TÀI KHOẢN THẤT BẠI');
 
     }
-
-    // Public function KTLogin(Request $rq)
-    // {
-    //     $Kt1 = khach_hang::where('ten_dang_nhap', $rq->TenTK )->where('mat_khau', $rq->MK)->first();
-    //     $Kt2 = admin::where('ten_dang_nhap', $rq->TenTK )->where('password', $rq->MK)->first();
-    //     if($Kt1)
-    //     {
-
-    //         session(['logged_in' => $Kt1->quyen_id]);
-    //         return view("client/index");
-
-    //     }
-    //     if($Kt2)
-    //     {
-    //         session(['logged_in' => $Kt2->quyen_id]);
-    //         return redirect()->route('trangchu')->with('thong_bao', 'ĐĂNG NHẬP THÀNH CÔNG');
-
-    //     }
-
-
-    //         return redirect()->route('DangNhap')->with('thong_bao', 'ĐĂNG NHẬP THẤT BẠI');
-
-
-    // }
-
-    // public function logout(Request $request)
-    // {
-    //     // unset($_SESSION['logged_in']);
-    //     $request->session()->forget('logged_in');
-    //     return redirect()->route('DangNhap'); 
-    // }
+   
+   
     public function KTLogin(Request $rq)
     {
         $acc = admin::where('ten_dang_nhap', $rq->ten_dang_nhap)->first();
@@ -77,7 +48,6 @@ class AccountController extends Controller
             
         }
             // dd($rq);
-        // return redirect()->route('trangchu')->with('thong_bao', 'ĐĂNG NHẬP THÀNH CÔNG');
         return redirect()->route('DangNhap')->with('thong_bao', 'ĐĂNG NHẬP THẤT BẠI');
     }
     public function logout(Request $request)

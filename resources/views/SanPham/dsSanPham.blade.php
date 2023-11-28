@@ -44,7 +44,7 @@
         </td>
 
         <td>
-            <a href="{{route(''}}" class="btn btn-info">Cap nhat</a>
+            <a href= >class="btn btn-info">Cap nhat</a>
             <a href="" class="btn btn-success">Xoa</a>
         </td>
 

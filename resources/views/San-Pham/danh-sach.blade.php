@@ -8,7 +8,7 @@
         <h1 class="h2">DANH SÁCH SẢN PHẨM</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <a href="{{ route('sanpham.them') }}" type="button" class="btn btn-sm btn-outline-secondary" >Thêm mới</a>
+            <a href="{{ route('NhaCungCap.Them') }}" type="button" class="btn btn-sm btn-outline-secondary" >Thêm mới</a>
             
           </div>
           
@@ -39,8 +39,7 @@
         <td>{{ $SanPham->so_luong }}</td>
 
         <td>{{ $SanPham->thong_tin }}</td>
-        <td><a  href="{{ route('sanpham.HinhAnh', ['id' => $SanPham->id ])}}">xem ảnh sản phẩm</a> </td>
-        <td>
+       <td>
             <a href="{{ route('sanpham.Sua', ['id' => $SanPham->id ])}}">Sửa</a> | <a href="{{ route('sanpham.xuLyXoa', ['id' => $SanPham->id ])}}">Xoá</a>
             
         </td>

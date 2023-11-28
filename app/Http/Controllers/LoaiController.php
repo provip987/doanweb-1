@@ -17,15 +17,8 @@ class LoaiController extends Controller
 
     function Them(Request $request)
     {
-        if ($request->session()->has('logged_in'))
-        {
+     
             return view('Loai_SP/them');
-}
-        else
-        {
-            return redirect()->route('DangNhap')->with('thong_bao', 'thành công');
-        }
-        
     }
 
     function XuLyThem(Request $rq)
@@ -36,20 +29,16 @@ class LoaiController extends Controller
 
         $Loai->save();
         $DsLoai = loai::all();
-        return view('Loai_SP/danh-sach',compact('DsLoai'));
+        // return view('Loai_SP/danh-sach',compact('DsLoai'));
+        return redirect()->route('Loai.DanhSach')->with('thong_bao', 'Thêm THÀNH CÔNG');
     }
 
     function Sua($id,Request $request)
     {
-        if ($request->session()->has('logged_in'))
-        {
-            $Loai = loai::find($id);
+        
+       $Loai = loai::find($id);
         return view('Loai_SP/Sua',compact('Loai'));
-}
-        else
-        {
-            return redirect()->route('DangNhap')->with('thong_bao', 'thành công');
-        }
+       
         
     }
 

@@ -77,7 +77,7 @@ Route::get('client/themKhachHang', [KhachHangController::class, 'themKhachHang']
 Route::post('client/themKhachHangg', [KhachHangController::class, 'xulythemkhachhang'])->name('xulythemkhachhang');
 Route::get('client/capNhatKhachHang/{id}',[KhachHangController::class,'capnhatkhachhang'])->name('capnhatkhachhangg');
 Route::put('client/capNhatKhachHang/{id}',[KhachHangController::class,'xulycapnhatkhachhang'])->name('xulycapnhatkhachhang');
-Route::delete('client/capNhatKhachHang/{id}',[KhachHangController::class,'xulyxoakhachhang'])->name('xoakhachhang');
+Route::delete('client/xoaKhachHang/{id}',[KhachHangController::class,'xulyxoakhachhang'])->name('xoakhachhang');
 
 //san pham
 Route::get('hien_thi_ds_san_pham',[SanPhamController::class,'showSanPham'])->name('hienthidsSanPham');
@@ -86,6 +86,11 @@ Route::post('xu_ly them_SP',[SanPhamController::class,'xulyThemSanPham'])->name(
 
 //Nhan vien
 Route::get('NhanVien/DS', [NhanVienController::class, 'DSNV'])->name('DSNV');//->middleware('auth');
+Route::get('NhanVien/themnv', [NhanVienController::class, 'themnv'])->name('themnv');
+Route::post('NhanVien/themnv', [NhanVienController::class, 'xulythemnv'])->name('xulythemnv');
+Route::get('NhanVien/xoa/{id}',[NhanVienController::class,'XuLyXoa'])->name('xoanhanvien');
+
+
 
 //NhaCungCup
 
